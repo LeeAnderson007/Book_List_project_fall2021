@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+// import List from "./List";
 
 const BookForm = ({addBook, updateBook, book}) => {
   const [title, setTitle] = useState(
@@ -14,8 +14,8 @@ const BookForm = ({addBook, updateBook, book}) => {
 
   const handleSubmit = (b) => {
     b.preventDefault();
-    //console.log("form submitted");
-    // console.log({ firstName, lastName });
+    console.log("form submitted");
+    console.log({ title, author });
     // addUser....
 
     if (book) {

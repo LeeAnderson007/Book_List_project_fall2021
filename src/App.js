@@ -5,8 +5,6 @@ import BookForm from "./BookForm";
 
 const App = () => {
   const [books, setBooks] = useState([]);
-  // first arg is a function that gets called on mount
-  // second arg, [] will have this only get on mount
   useEffect(() => {
     console.log("useEffect called");
     // want to get data from api
@@ -20,13 +18,11 @@ const App = () => {
       setBooks(res.data.data);
     } catch (err) {
       alert("err occured getting user");
-      // setUsers(dummyUsers);
       console.log(err);
     }
   };
 
   const addBook = (book) => {
-    // how do I add I user to my array of users.
     let newBooks = [book, ...books];
     setBooks(newBooks);
   };
@@ -53,11 +49,11 @@ const App = () => {
     return Books.map((book) => {
       return (
         <div style={styles.container} key={book.isbn}>
-          <h1>{`${book.title}`}</h1>
-          <img src={user.avatar} />
+          <h1>{`${book.title} ${book.author}`}</h1>
+          {/* <img src={book.avatar} /> */}
           <p>{book.isbn}</p>
           <button onClick={() => deleteBook(book.isbn)}>delete</button>
-          <UserForm updateBook={updateBook} book={book} />
+          <BookForm updateBook={updateBook} book={book} />
         </div>
       );
     });
@@ -76,14 +72,13 @@ const App = () => {
 
 const styles = {
   container: {
-    // border: "1px solid",
     boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
     padding: "10px",
     margin: "40px",
   },
 };
 
-// Lifecycle of a component
+
 
 // Mounted(intial render) - useEffect hook
 // update(setState- rerender)- useState hook
