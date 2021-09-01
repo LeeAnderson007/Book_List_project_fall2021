@@ -52,7 +52,7 @@ const BookForm = ({addBook, updateBook, book}) => {
             setAuthor(b.target.value);
           }}
           />
-          {/* //value={lastName} */}
+          {/* value={lastName} */}
           <p>Description</p>
         <input onChange={(b) => {
             setDescription(b.target.value);

@@ -46,7 +46,7 @@ const App = () => {
       return <p>No Books</p>;
     }
 
-    return Books.map((book) => {
+    return books.map((book) => {
       return (
         <div style={styles.container} key={book.isbn}>
           <h1>{`${book.title} ${book.author}`}</h1>
@@ -63,7 +63,7 @@ const App = () => {
   return (
     <div>
       <h1>App Component Here!!!!</h1>
-      <UserForm x={addBook} />
+      <BookForm x={addBook} />
       {renderBooks()}
       <List />
     </div>
