@@ -51,12 +51,13 @@ const BookForm = ({addBook, updateBook, book}) => {
         <input onChange={(b) => {
             setAuthor(b.target.value);
           }}
+          value={author}
           />
-          {/* value={lastName} */}
           <p>Description</p>
         <input onChange={(b) => {
             setDescription(b.target.value);
           }}
+          value={description}
         />
         <button type="submit">{book ? "Update" : "Add"}</button>
       </form>
